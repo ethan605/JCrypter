@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: jcrypter.JCrypter
+SplashScreen-Image: images/splash_java.png
+
