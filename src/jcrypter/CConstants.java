@@ -1,8 +1,8 @@
 package jcrypter;
 
 public class CConstants {
-	/*
-	 * CCrypter constants
+  /*
+   * CCrypter constants
 	 */
 	public static final String CRYPT_ALGORITHMS[] = {"AES", "Blowfish", "DES", "DESede"};
 	public static final String MESSAGE_DIGEST_ALGORITHMS[] = {"MD2", "MD5", "SHA-1", "SHA-256", "SHA-512"};

@@ -14,7 +14,7 @@ public class CFileChecksumPanel extends JPanel {
 	
 	private JButton jbtnBrowseInput, jbtnChecksum;
 	private JCheckBox jckbUpperCaseDisplay;
-	private JComboBox jcbxChecksumAlgorithm;
+	private JComboBox<String> jcbxChecksumAlgorithm;
 	private JLabel jlblInputFile, jlblChecksumAlgorithm, jlblChecksumResult;
 	private JProgressBar jpgbProgBar;
 	private JTextArea jtxtChecksumResult;
@@ -78,7 +78,7 @@ public class CFileChecksumPanel extends JPanel {
 		jbtnBrowseInput.setToolTipText(CConstants.FCS_BTN_BROWSE_INPUT_TOOLTIP);
 		this.add(jbtnBrowseInput);
 		
-		jcbxChecksumAlgorithm = new JComboBox(CConstants.CHECKSUM_ALGORITHMS);
+		jcbxChecksumAlgorithm = new JComboBox<String>(CConstants.CHECKSUM_ALGORITHMS);
 		jcbxChecksumAlgorithm.setBounds(new Rectangle(170, 70, 90, 30));
 		jcbxChecksumAlgorithm.setEnabled(false);
 		jcbxChecksumAlgorithm.setFont(fntInterfaceFont);

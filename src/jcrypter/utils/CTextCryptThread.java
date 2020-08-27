@@ -5,7 +5,7 @@ import java.security.*;
 import javax.crypto.*;
 import javax.crypto.spec.*;
 import javax.swing.*;
-import org.apache.commons.codec.binary.*;
+import java.util.Base64;
 
 import jcrypter.CConstants;
 
@@ -72,7 +72,7 @@ public class CTextCryptThread {
 			e.printStackTrace();
 		}
  
-    	return new Base64().encodeToString(encryptedDataBytes);
+    	return Base64.getEncoder().encodeToString(encryptedDataBytes);
     }
 	
 	private String decrypt(String encryptedData) {
@@ -80,7 +80,7 @@ public class CTextCryptThread {
 		try {
 			Cipher cipher = Cipher.getInstance(this.cryptAlgorithm + "/" + CConstants.CRYPT_MODE + "/" + CConstants.CRYPT_PADDING);
 			cipher.init(Cipher.DECRYPT_MODE, secretKey);
-			byte[] encryptedDataBytes = new Base64().decode(encryptedData), 
+			byte[] encryptedDataBytes = Base64.getDecoder().decode(encryptedData), 
 					clearDataBytes = cipher.doFinal(encryptedDataBytes);
 			clearData = new String(clearDataBytes, "UTF8");
 		} catch (UnsupportedEncodingException e) {
